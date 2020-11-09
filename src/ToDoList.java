@@ -31,6 +31,9 @@ public class ToDoList {
         }
     }
 
+    /**
+     * Creates a Task object from String info and adds it to the PriorityQueue
+     * @param s the String of Task object info to be added*/
     public void addTask(String s) {
         boolean exists = false;
         String concat = "";
@@ -74,9 +77,14 @@ public class ToDoList {
     }
 
     /**
-     * Returns the PriorityQueue of Task objects
-     * @return the PriorityQueue of Task objects*/
-    public PriorityQueue<Task> getTasks() {
-        return tasks;
+     * Overrides the toString method
+     * @return the PriorityQueue list of Task objects*/
+    @Override
+    public String toString() {
+        String s = "";
+        for (Task t: tasks) {
+            s += t.getPriority() + " " + t.getDescription();
+        }
+        return s;
     }
 }

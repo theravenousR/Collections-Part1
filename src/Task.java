@@ -62,6 +62,7 @@ public class Task implements Comparable<Task>{
     /** Overrides the toString method
      * @return the priority level integer followed by the String description
      */
+    @Override
     public String toString() {
         return "Priority: " + priority + " Description: " + description;
     }
@@ -91,11 +92,12 @@ public class Task implements Comparable<Task>{
     }
 
     /**
-     * Returns an integer result of the comparison between Task object priority integers
+     * Overrides the compareTo method so that the basis for comparison in Task objects is priority level
      * @return the integer result*/
-    public static int compare(Task t, Task k) {
-        int x = t.getPriority();
-        int y = k.getPriority();
+    @Override
+    public int compareTo(Task t) {
+        int x = this.getPriority();
+        int y = t.getPriority();
         if (x == y) {
             return 0;
         }
@@ -105,13 +107,5 @@ public class Task implements Comparable<Task>{
         else {
             return -1;
         }
-    }
-
-    /**
-     * Overrides the compareTo method so that the basis for comparison in Task objects is priority level
-     * @return the integer result*/
-    @Override
-    public int compareTo(Task t) {
-        return Task.compare(this, t);
     }
 }

@@ -34,6 +34,7 @@ public class Tester {
         list.addTask("add 5 Have dinner with friends");
         list.addTask("add 9 Sleep well");
 
+        System.out.println();
         list.addTask("add 9 Sleep well");
         System.out.println("Expected: Task already exists!");
 
