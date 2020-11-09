@@ -37,6 +37,7 @@ public class Tester {
         list.addTask("add -2 all parents");
         list.addTask("add 2");
         list.addTask("add two twice");
+        list.addTask("add 12 sleep well");
 
         System.out.println();
         list.addTask("add 9 Sleep Well");

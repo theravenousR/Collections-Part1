@@ -16,22 +16,6 @@ public class ToDoList {
     ToDoList(){}
 
     /**
-     * Adds a new Task object to the PriorityQueue after checking to make sure it doesn't already exist
-     * @param t the Task object to be added*/
-    public void addTask(Task t) {
-        boolean exists = false;
-        for (Task k: tasks) {
-            if (k.equals(t)) {
-                exists = true;
-                System.out.println("Task already exists!");
-            }
-        }
-        if (!exists) {
-            tasks.add(t);
-        }
-    }
-
-    /**
      * Creates a Task object from String info and adds it to the PriorityQueue
      * @param s the String of Task object info to be added*/
     public void addTask(String s) {
@@ -40,12 +24,17 @@ public class ToDoList {
             return;
         }
         boolean exists = false;
+        int p = 0;
         String concat = "";
         String[] arr = s.split(" ");
         if (arr[1].matches("-?\\d+")) {
-            Integer.parseInt(arr[1]);
+            p = Integer.parseInt(arr[1]);
         }
         else {
+            System.out.println("The priority must be an integer between 1 and 9.");
+            return;
+        }
+        if (p < 1 || p > 9) {
             System.out.println("The priority must be an integer between 1 and 9.");
             return;
         }
