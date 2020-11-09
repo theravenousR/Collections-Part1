@@ -83,7 +83,7 @@ public class ToDoList {
     public String toString() {
         String s = "";
         for (Task t: tasks) {
-            s += t.getPriority() + " " + t.getDescription();
+            s += t.getPriority() + " " + t.getDescription() + "\n";
         }
         return s;
     }
