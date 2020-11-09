@@ -35,6 +35,10 @@ public class ToDoList {
      * Creates a Task object from String info and adds it to the PriorityQueue
      * @param s the String of Task object info to be added*/
     public void addTask(String s) {
+        if (s.length() < 7) {
+            System.out.println("Bad command");
+            return;
+        }
         boolean exists = false;
         String concat = "";
         String[] arr = s.split(" ");
