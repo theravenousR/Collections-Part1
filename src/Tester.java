@@ -33,9 +33,13 @@ public class Tester {
         list.addTask("add 6 Call parents");
         list.addTask("add 5 Have dinner with friends");
         list.addTask("add 9 Sleep well");
+        list.addTask("add");
+        list.addTask("add -2 all parents");
+        list.addTask("add 2");
+        list.addTask("add two twice");
 
         System.out.println();
-        list.addTask("add 9 Sleep well");
+        list.addTask("add 9 Sleep Well");
         System.out.println("Expected: Task already exists!");
 
         System.out.println();

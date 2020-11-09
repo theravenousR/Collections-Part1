@@ -42,10 +42,10 @@ public class ToDoList {
         boolean exists = false;
         String concat = "";
         String[] arr = s.split(" ");
-        try {
+        if (arr[1].matches("-?\\d+")) {
             Integer.parseInt(arr[1]);
         }
-        catch (NumberFormatException e) {
+        else {
             System.out.println("The priority must be an integer between 1 and 9.");
             return;
         }
